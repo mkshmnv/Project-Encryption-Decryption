@@ -1,0 +1,1 @@
+fun main() = println(List(readLine()!!.toInt()) { readLine()!!.toInt() }.filter { it % 4 == 0 }.maxOf { it })

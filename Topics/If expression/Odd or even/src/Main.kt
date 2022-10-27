@@ -1,0 +1,1 @@
+fun main() = if ((readln().toInt() % 2) == 0) println("EVEN") else println("ODD")

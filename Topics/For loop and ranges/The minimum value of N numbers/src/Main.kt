@@ -1,0 +1,1 @@
+fun main() = println(List(readln().toInt()) { readln().toInt() }.sorted()[0])
