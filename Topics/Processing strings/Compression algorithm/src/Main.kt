@@ -1,6 +1,5 @@
 fun main() {
     val inputString = readln()
-    inputString.gro
     var outputString = inputString.first().toString()
     var count = 0
 
