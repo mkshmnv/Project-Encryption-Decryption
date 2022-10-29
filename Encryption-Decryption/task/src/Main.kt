@@ -1,5 +1,11 @@
+// Make global constant
 const val ENCRYPTION = "enc"
 const val DECRYPTION = "dec"
+var MODE = DECRYPTION
+var KEY = 0
+var DATA = ""
+
+// Perform encryption and decryption
 fun encryption(message: String, key: Int): String {
     var encryptMessage = ""
     for (letter in message) {
@@ -16,26 +22,48 @@ fun decryption(message: String, key: Int): String {
     return encryptMessage
 }
 
-fun main() {
-    val keyCryption = readln().lowercase()
-    val inputMessage = readln()
-    val inputKey = readln().toInt()
-    encryption(inputMessage, inputKey)
+// Verify input information
+fun checkMode(mode: String) {
+    MODE = (if (mode == DECRYPTION) DECRYPTION else ENCRYPTION).toString()
+}
 
+fun checkKey(key: Int?) {
+    KEY = key ?: 0
+}
+
+fun checkData(data: String?) {
+    DATA = data ?: ""
+}
+
+fun clarification(inputArray: Array<String>) {
+    for (argument in inputArray) {
+        when {
+            argument.substring(0, 5) == "-mode" -> checkMode(argument.substring(6, 9))
+            argument.substring(0, 5) == "-key " -> checkKey(argument.last().toString().toInt())
+            argument.substring(0, 5) == "-data" -> checkData(argument.drop(6))
+        }
+    }
+}
+
+fun main(args: Array<String>) {
+
+    // Clarification input information
+    clarification(args)
+
+    // Initiate encryption and decryption
     println(
-        when (keyCryption) {
+        when (MODE) {
             ENCRYPTION -> {
-                encryption(inputMessage, inputKey)
+                encryption(DATA, KEY)
             }
 
             DECRYPTION -> {
-                decryption(inputMessage, inputKey)
+                decryption(DATA, KEY)
             }
 
             else -> {
                 println("Error!")
             }
-
         }
     )
 }
