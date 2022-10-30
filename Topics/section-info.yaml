@@ -28,3 +28,6 @@ content:
 - When expression
 - Functional decomposition
 - Arrays
+- Errors in programs
+- String formatting
+- Hierarchy of exceptions
