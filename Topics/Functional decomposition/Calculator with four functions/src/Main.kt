@@ -1,11 +1,22 @@
 // Implement your functions here
-fun subtractTwoNumbers...
+fun subtractTwoNumbers(a: Long, b: Long) {
+    println(a - b)
+}
 
+fun sumTwoNumbers(a: Long, b: Long) {
+    println(a + b)
+}
 
-fun sumTwoNumbers...
+fun divideTwoNumbers(a: Long, b: Long) {
+    println(
+        if (b == "0".toLong()) {
+            "Division by 0!"
+        } else {
+            a / b
+        }
+    )
+}
 
-
-fun divideTwoNumbers...
-
-
-fun multiplyTwoNumbers...
+fun multiplyTwoNumbers(a: Long, b: Long) {
+    println(a * b)
+}
