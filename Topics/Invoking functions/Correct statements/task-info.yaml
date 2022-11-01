@@ -4,8 +4,8 @@ options:
 - text: A function is a subprogram that we can call in the program through the function
     name
 - text: Function can be called only once
-- text: If the function does not return any meaningful result, then it returns a special
-    value
+- text: "If the function does not return any meaningful result, then it returns a\
+    \ special value"
 - text: The function should return as many results as it took arguments.
 files:
 - name: src/Main.kt

@@ -31,3 +31,6 @@ content:
 - Errors in programs
 - String formatting
 - Hierarchy of exceptions
+- Taming exceptions
+- Nullable and non-nullable types
+- Null safety

@@ -1,11 +1,11 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: niltoK ,olle
-- text: Kot ,olleH
-- text: Hello, Kotlin
-- text: iltoK ,olleH
-- text: niltoK ,olleH
+- text: "niltoK ,olle"
+- text: "Kot ,olleH"
+- text: "Hello, Kotlin"
+- text: "iltoK ,olleH"
+- text: "niltoK ,olleH"
 files:
 - name: src/Main.kt
   visible: true

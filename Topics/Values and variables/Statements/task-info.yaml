@@ -1,8 +1,8 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: In many cases, it is better to use immutable variables instead of mutable
-    ones.
+- text: "In many cases, it is better to use immutable variables instead of mutable\
+    \ ones."
 - text: Every variable has a name.
 - text: It is impossible to change the value of a variable declared with the keyword
     <b>var</b>.

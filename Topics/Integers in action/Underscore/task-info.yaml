@@ -1,10 +1,10 @@
 type: choice
 is_multiple_choice: false
 options:
-- text: in any place inside a number, but not near other underscore.
+- text: "in any place inside a number, but not near other underscore."
 - text: ' before or after a number.'
 - text: in any place inside a number.
-- text: only every three digits, counting from the right.
+- text: "only every three digits, counting from the right."
 files:
 - name: src/Main.kt
   visible: true
