@@ -1,3 +1,1 @@
-fun reverse(input: Int?): Int {
-    return 0
-}
+fun reverse(input: Int?) = input?.toString()?.reversed()?.toInt() ?: -1
