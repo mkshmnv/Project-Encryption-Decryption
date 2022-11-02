@@ -1,0 +1,16 @@
+type: code
+files:
+- name: src/Main.kt
+  visible: true
+  text: |-
+    fun solution(numbers: List<Int>) {
+        // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/10736#comment
+status: Unchecked
+feedback:
+  message: "Failed to connect to server, check the Internet connection \n\nFailed\
+    \ to connect to hyperskill.org/13.95.11.223:443"
+  time: "Wed, 02 Nov 2022 18:28:50 UTC"
+record: -1
