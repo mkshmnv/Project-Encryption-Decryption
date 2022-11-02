@@ -1,9 +1,9 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: array[0]
-- text: array[1]
-- text: array[array.lastIndex]
+- text: "array[0]"
+- text: "array[1]"
+- text: "array[array.lastIndex]"
 - text: array.first()
 files:
 - name: src/Main.kt

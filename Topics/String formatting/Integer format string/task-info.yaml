@@ -4,7 +4,7 @@ options:
 - text: '"%#d"'
 - text: '"%12.4d"'
 - text: '"%-+(12d"'
-- text: '"%+,012d"'
+- text: "\"%+,012d\""
 files:
 - name: src/Main.kt
   visible: true

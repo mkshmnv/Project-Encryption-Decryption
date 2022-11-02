@@ -2,7 +2,7 @@ type: choice
 is_multiple_choice: true
 options:
 - text: '!! syntax'
-- text: Bad initializations, for example, in constructors
+- text: "Bad initializations, for example, in constructors"
 - text: Access to a property of a null object
 - text: Explicit throwing of a NullPointerException
 files:
