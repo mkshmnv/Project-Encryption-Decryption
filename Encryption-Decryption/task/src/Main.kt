@@ -36,11 +36,11 @@ fun checkData(data: String?) {
 }
 
 fun clarification(inputArray: Array<String>) {
-    for (argument in inputArray) {
+    for ((index, value) in inputArray.withIndex()) {
         when {
-            argument.substring(0, 5) == "-mode" -> checkMode(argument.substring(6, 9))
-            argument.substring(0, 5) == "-key " -> checkKey(argument.last().toString().toInt())
-            argument.substring(0, 5) == "-data" -> checkData(argument.drop(6))
+            value == "-mode" -> checkMode(inputArray[index + 1])
+            value == "-key" -> checkKey(inputArray[index + 1].toInt())
+            value == "-data" -> checkData(inputArray[index + 1])
         }
     }
 }
