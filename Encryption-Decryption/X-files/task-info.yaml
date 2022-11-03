@@ -114,6 +114,17 @@ files:
         }
     }
   learner_created: false
+- name: output.txt
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/21970#comment
-status: Unchecked
+status: Failed
+feedback:
+  message: |-
+    Wrong answer in test #1
+
+    Wrong result in the file!
+
+    Arguments: -mode enc -key 5 -in in.txt -out output.txt
+  time: "Thu, 03 Nov 2022 19:50:10 UTC"
 record: -1
