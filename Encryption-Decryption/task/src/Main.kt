@@ -1,59 +1,36 @@
 import java.io.File
+fun main(args: Array<String>) {
+    val argsMap = args.toList().zipWithNext().toMap()
 
-// Make global constant
-const val ENCRYPTION = "enc"
-const val DECRYPTION = "dec"
-var MODE = DECRYPTION
-var KEY = 0
-var DATA = ""
-
-fun main(o: Array<String>) {
-
-    val one = arrayOf("-mode", "enc", "-key", "5", "-data", "Welcome to hyperskill!", "-out", "output.txt")
-    val args = arrayOf("-mode", "enc", "-key", "5", "-data", "Welcome to hyperskill!")
-    val third = arrayOf("-key", "5", "-data", "\\jqhtrj%yt%m~ujwxpnqq&", "-mode", "dec")
-
-    values(args)
-
-    if ("-in" in args && "-out" in args) {
-        val myFile = File(args[args.indexOf("-out") + 1])
-        myFile.writeText(crypt(DATA, KEY))
-    } else if ("-data" in args || "-in" in args) {
-        println(crypt(DATA, KEY))
+    val mode = argsMap.getOrDefault("-mode", "enc")
+    val key = argsMap.getOrDefault("-key", "0").toInt()
+    val data = if ("-data" in args) {
+        argsMap.getOrDefault("-data", "")
+    } else {
+        val fileName = argsMap.getOrDefault("-in", "")
+        val text = File(fileName).readText()
+        text
     }
-}
+    val fileOut = argsMap.getOrDefault("-out", "") ?: ""
 
-//    Parsing input information
-fun values (inputArray: Array<String>) {
+    val result = when(mode) {
+        "enc" -> encrypt(data, key)
+        "dec" -> decrypt(data, key)
+        else -> "Error"
+    }
+
     when {
-        ("-mode" in inputArray) -> MODE = DECRYPTION
-        ("-key" in inputArray) -> KEY = inputArray[inputArray.indexOf("-key") + 1].toInt()
-        ("-data" in inputArray) -> DATA = inputArray[inputArray.indexOf("-data") + 1]
-//        ("-in" in inputArray && "-data" !in inputArray) -> {
-//            val fileName = inputArray[inputArray.indexOf("-in") + 1]
-//            val file = File(fileName)
-//            DATA = file.readText()
-//        }
+        (fileOut.isEmpty()) -> println(result)
+        else -> {
+            val myFile = File(fileOut)
+            myFile.writeText(result)
+        }
     }
 }
 
-// Encryption and decryption
-fun crypt(message: String, key: Int): String {
-    var encryptMessage = ""
-    when (MODE) {
-        ENCRYPTION -> {
-            for (letter in message) {
-                encryptMessage += (letter.code + key).toChar()
-            }
-        }
-        DECRYPTION -> {
-            for (letter in message) {
-                encryptMessage += (letter.code - key).toChar()
-            }
-        }
-        else -> {
-            throw Exception("Error")
-        }
-    }
-    return encryptMessage
+fun encrypt(data: String, key: Int): String {
+    return data.map { it + key }.joinToString("")
+}
+fun decrypt(data: String, key: Int): String {
+    return data.map { it - key }.joinToString("")
 }
