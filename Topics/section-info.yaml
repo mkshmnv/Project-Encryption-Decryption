@@ -36,3 +36,5 @@ content:
 - Null safety
 - Type system
 - Floating-point types
+- Multi-dimensional list
+- List
